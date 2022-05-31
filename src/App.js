@@ -18,6 +18,9 @@ function App() {
     .then(setCharacterList)
   }, [])
 
+  function handleCharacter(newChar){
+    setCharacterList([newChar, ...characterList])
+  }
 
   return (
     <Router>
@@ -37,7 +40,7 @@ function App() {
         <Route path='/' element={ <Home />} />
         <Route path='/character' element={ <CharContainer charList={ characterList }/>} />
         <Route path='/search' element={ <Search charList={ characterList }/>} />
-        <Route path='/form' element={ <Form />} />
+        <Route path='/form' element={ <Form newChar={handleCharacter} />} />
       </Routes>
     </Router>
   );
