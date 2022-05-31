@@ -1,10 +1,14 @@
 import React from 'react'
+import { useState } from "react"
 
 function Home() {
+
+  
+
   return (
     <div>
-      <h1>About</h1>
-      <p> <strong>This interactive app allows users to view recipes, search for recipes by name, and submit there own recipes</strong></p>
+      <h1>Home</h1>
+
     </div>
   )
 }
