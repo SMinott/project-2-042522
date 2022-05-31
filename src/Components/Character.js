@@ -1,13 +1,14 @@
 import React from 'react'
 
-function Character() {
+function Character({ item }) {
+
+  console.log(item)
+
   return (
     <div>
-      <h1>List of Recipes:</h1>
-      <ul>
-        <li></li>
-        {/* map over array to create ordered/unordered list */}
-      </ul>
+      <h1>{item.name}</h1>
+      <img src={item.image}></img>
+      <h3>{item.quote}</h3>
     </div>
   )
 }
