@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeContainer() {
+function CharContainer() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function RecipeContainer() {
   )
 }
 
-export default RecipeContainer
+export default CharContainer

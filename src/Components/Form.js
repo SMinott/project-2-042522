@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeForm() {
+function Form() {
   return (
     <div>
       <div>
@@ -15,4 +15,4 @@ function RecipeForm() {
   )
 }
 
-export default RecipeForm
+export default Form

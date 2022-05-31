@@ -2,9 +2,9 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Home from './Components/Home';
-import RecipeList from './Components/RecipeList';
-import RecipeSearch from './Components/RecipeSearch';
-import RecipeForm from './Components/RecipeForm';
+import Character from './Components/Character';
+import Search from './Components/Search';
+import Form from './Components/Form';
 
 function App() {
   return (
@@ -15,16 +15,16 @@ function App() {
       <nav>
         <ul>
           <li><Link to='/'>Home</Link></li>
-          <li><Link to='list'>Recipes</Link></li>
+          <li><Link to='list'>Characters</Link></li>
           <li><Link to='search'>Search</Link></li>
-          <li><Link to='form'>Add Recipe</Link></li>
+          <li><Link to='form'>Add Character</Link></li>
         </ul>
       </nav>
       <Routes>
         <Route path='/' element={ <Home />} />
-        <Route path='/list' element={ <RecipeList />} />
-        <Route path='/search' element={ <RecipeSearch />} />
-        <Route path='/form' element={ <RecipeForm />} />
+        <Route path='/character' element={ <Character />} />
+        <Route path='/search' element={ <Search />} />
+        <Route path='/form' element={ <Form />} />
       </Routes>
     </Router>
   );
