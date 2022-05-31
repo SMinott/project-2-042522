@@ -36,7 +36,6 @@ function App() {
       <Routes>
         <Route path='/' element={ <Home />} />
         <Route path='/character' element={ <CharContainer charList={ characterList }/>} />
-        <Route path='/search' element={ <Search charList={ characterList }/>} />
         <Route path='/form' element={ <Form newChar={handleCharacter} />} />
       </Routes>
     </Router>
