@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeSearch() {
+function Search() {
   return (
     <div>
       <h1>Search for Recipe By Name</h1>
@@ -9,4 +9,4 @@ function RecipeSearch() {
   )
 }
 
-export default RecipeSearch
+export default Search

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function RecipeList() {
+function Character() {
   return (
     <div>
       <h1>List of Recipes:</h1>
@@ -12,4 +12,4 @@ function RecipeList() {
   )
 }
 
-export default RecipeList
+export default Character
