@@ -3,7 +3,14 @@ import React from 'react'
 function RecipeForm() {
   return (
     <div>
-      Submit New Recipes
+      <div>
+        <h1>Submit New Recipes</h1>
+        {/* input windows will be based on API; how many, what is entred */}
+        <input name='' value='' placeholder='Based on API'></input>
+        <input name='' value='' placeholder='Based on API'></input>
+        <input name='' value='' placeholder='Based on API'></input>
+      </div>
+      <button>Submit</button>
     </div>
   )
 }

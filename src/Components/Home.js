@@ -4,7 +4,7 @@ function Home() {
   return (
     <div>
       <h1>About</h1>
-      <p>This interactive app allows users to view recipes, search for recipes by name, and submit there own recipes</p>
+      <p> <strong>This interactive app allows users to view recipes, search for recipes by name, and submit there own recipes</strong></p>
     </div>
   )
 }
