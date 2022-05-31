@@ -1,54 +1,34 @@
-import React from 'react'
 import { useState } from "react"
 import Character from "./Character"
+import Search from "./Search"
 
 function CharContainer({ charList }) {
 
-  const [name, setName] = useState("")
-  const [searchedName, setSearchedName] = useState("")
+    const [searchedName, setSearchedName] = useState("")
 
-  function handleChange(event)
-  {
-    setName(event.target.value)
-  }
-
-  function handleSubmit(event)
-  {
-    event.preventDefault()
-    // setSearchedName(name)
-    if (name === "")
+    const filterList = (item) =>
     {
-      setSearchedName("")
+        setSearchedName(item)
     }
-    else
-    {
-      setSearchedName(name)
-    }
-  }
 
-  console.log(searchedName)
+    const searchList = charList.filter((item) =>
+    {
+      return (
+        item.name.toLowerCase().includes(searchedName.toLowerCase())
+      )
+    })
   
-  const searchList = charList.filter((item) =>
-  {
-    return (
-      item.name.toLowerCase().includes(searchedName.toLowerCase())
-    )
-  })
-
-  const displayList = searchList.map((item) =>
-  {
-    return (
-      <Character item={item} />
-    )
-  })
+    const displayList = searchList.map((item) =>
+    {
+      return (
+        <Character item={item} />
+      )
+    })
 
   return (
     <div>
       <h1>Characters</h1>
-      <form onSubmit={ handleSubmit }>
-        <input type='text' placeholder='Character Name...' onChange={ handleChange }></input>
-        <button>Submit</button>
-      </form>
+      <Search filterList={ filterList }/>
       {displayList}
 
     </div>
