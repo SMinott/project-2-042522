@@ -19,9 +19,9 @@ function Character({ item, deleteChar}) {
   // console.log(item)
 
   return (
-    <div>
+    <div class="card">
       <h1>{name}</h1>
-      <img src={image} alt={name} ></img>
+      <img class="cardPic" src={image} alt={name} ></img>
       <h3>{quote}</h3>
 
       {seefavorite ? (

@@ -34,15 +34,15 @@ function handleSubmit(e){
 }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <h1>Submit New Recipes</h1>
-        <input name='name' placeholder='Name' onChange={handleChange}></input>
-        <input name='image' placeholder='Image'onChange={handleChange}></input>
-        <input name='quote' placeholder='Quote' onChange={handleChange}></input>
-      </div>
-      <button>Submit</button>
-    </form>
+    <div class="addFormContainer">
+      <h1>Submit New Character</h1>
+      <form onSubmit={handleSubmit}>
+          <input class="addFormInputs" name='name' placeholder='Name' onChange={handleChange}></input>
+          <input class="addFormInputs" name='image' placeholder='Image'onChange={handleChange}></input>
+          <input class="addFormInputs" name='quote' placeholder='Quote' onChange={handleChange}></input>
+        <button id="formButton" >Submit</button>
+      </form>
+    </div>
   )
 }
 

@@ -18,7 +18,6 @@ function CharContainer({ charList, deleteChar }) {
       )
     })
   
-<<<<<<< HEAD
   const searchList = charList.filter((item) =>
   {
     return (
@@ -32,20 +31,15 @@ function CharContainer({ charList, deleteChar }) {
       <Character item={item} deleteChar={deleteChar} />
     )
   })
-=======
-    const displayList = searchList.map((item) =>
-    {
-      return (
-        <Character item={item} />
-      )
-    })
->>>>>>> 359f0080af5933ecd9303f27a9e258dd8e493a3d
-
+   
   return (
     <div>
       <h1>Characters</h1>
       <Search filterList={ filterList }/>
-      {displayList}
+
+      <div class="cardContainer">
+        {displayList}
+      </div>
 
     </div>
   )
