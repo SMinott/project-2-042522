@@ -17,13 +17,6 @@ function CharContainer({ charList, deleteChar }) {
         item.name.toLowerCase().includes(searchedName.toLowerCase())
       )
     })
-  
-  const searchList = charList.filter((item) =>
-  {
-    return (
-      item.name.toLowerCase().includes(searchedName.toLowerCase())
-    )
-  })
 
   const displayList = searchList.map((item) =>
   {
