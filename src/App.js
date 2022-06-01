@@ -37,7 +37,7 @@ function App() {
       {/* Every route defined should be encompased in the <routes> element */}
       {/* Everthing outside of <Routes> appears on every page */}
       <nav>
-        <ul class="linkClass">
+        <ul className="linkClass">
           <li><Link to='/'>Home</Link></li>
           <li><Link to='character'>Character</Link></li>
           <li><Link to='form'>Add Character</Link></li>

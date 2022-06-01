@@ -34,12 +34,12 @@ function handleSubmit(e){
 }
 
   return (
-    <div class="addFormContainer">
+    <div className="addFormContainer">
       <h1>Submit New Character</h1>
       <form onSubmit={handleSubmit}>
-          <input class="addFormInputs" name='name' placeholder='Name' onChange={handleChange}></input>
-          <input class="addFormInputs" name='image' placeholder='Image'onChange={handleChange}></input>
-          <input class="addFormInputs" name='quote' placeholder='Quote' onChange={handleChange}></input>
+          <input className="addFormInputs" name='name' placeholder='Name' onChange={handleChange}></input>
+          <input className="addFormInputs" name='image' placeholder='Image'onChange={handleChange}></input>
+          <input className="addFormInputs" name='quote' placeholder='Quote' onChange={handleChange}></input>
         <button id="formButton" >Submit</button>
       </form>
     </div>
