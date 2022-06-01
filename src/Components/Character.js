@@ -8,20 +8,20 @@ function Character({ item, deleteChar}) {
     setSeeFavorite(seefavorite => !seefavorite)
   }
 
-  function handleClickDelete(){
-    fetch(`http://localhost:3000/characters${id}`, {
-      method: 'DELETE'
+  function handleClickDelete()
+  {
+    fetch(`http://localhost:3000/characters/${id}`, {
+      method: 'DELETE',
     })
       .then(resp => resp.json())
       .then(() => deleteChar(id)) //new prop created from new handleDelete func in Container
   }
 
-  // console.log(item)
 
   return (
-    <div class="card">
+    <div className="card">
       <h1>{name}</h1>
-      <img class="cardPic" src={image} alt={name} ></img>
+      <img className="cardPic" src={image} alt={name} ></img>
       <h3>{quote}</h3>
 
       {seefavorite ? (

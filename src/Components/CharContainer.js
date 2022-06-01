@@ -30,7 +30,7 @@ function CharContainer({ charList, deleteChar }) {
       <h1>Characters</h1>
       <Search filterList={ filterList }/>
 
-      <div class="cardContainer">
+      <div className="cardContainer">
         {displayList}
       </div>
 
