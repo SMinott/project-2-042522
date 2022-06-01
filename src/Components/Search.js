@@ -19,8 +19,8 @@ function Search({ filterList })
     return (
         <div>
             <form onSubmit={ handleSubmit }>
-                <input type='text' placeholder='Character Name...' onChange={ handleChange }></input>
-                <button>Submit</button>
+                <input id="searchInput" type='text' placeholder='Character Name...' onChange={ handleChange }></input>
+                <button id="searchButton" >Submit</button>
             </form>
         </div>
     )

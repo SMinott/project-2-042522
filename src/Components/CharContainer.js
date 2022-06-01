@@ -29,8 +29,9 @@ function CharContainer({ charList }) {
     <div>
       <h1>Characters</h1>
       <Search filterList={ filterList }/>
-      {displayList}
-
+      <div class="cardContainer">
+        {displayList}
+      </div>
     </div>
   )
 }

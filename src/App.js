@@ -22,12 +22,12 @@ function App() {
 
   return (
     <Router>
-      <h1>Mean Girls Characters</h1>
+      <h1 id="title">Mean Girls Characters</h1>
       {/* whatever is above this will remain the same throghout every other page */}
       {/* Every route defined should be encompased in the <routes> element */}
       {/* Everthing outside of <Routes> appears on every page */}
       <nav>
-        <ul>
+        <ul class="linkClass">
           <li><Link to='/'>Home</Link></li>
           <li><Link to='character'>Character</Link></li>
           <li><Link to='form'>Add Character</Link></li>
