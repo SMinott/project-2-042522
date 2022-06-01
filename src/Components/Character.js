@@ -1,14 +1,36 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-function Character({ item }) {
+function Character({ item, deleteChar}) {
+  const [seefavorite, setSeeFavorite] = useState(false)
+  const {id, name, image, quote} = item
 
-  console.log(item)
+  function handleClickFav(){
+    setSeeFavorite(seefavorite => !seefavorite)
+  }
+
+  function handleClickDelete(){
+    fetch(`http://localhost:3000/characters${id}`, {
+      method: 'DELETE'
+    })
+      .then(resp => resp.json())
+      .then(() => deleteChar(id)) //new prop created from new handleDelete func in Container
+  }
+
+  // console.log(item)
 
   return (
     <div>
-      <h1>{item.name}</h1>
-      <img src={item.image}></img>
-      <h3>{item.quote}</h3>
+      <h1>{name}</h1>
+      <img src={image} alt={name} ></img>
+      <h3>{quote}</h3>
+
+      {seefavorite ? (
+          <button onClick={handleClickFav} className="emoji-button favorite active">★</button>
+        ) : (
+          <button onClick={handleClickFav} className="emoji-button favorite">☆</button>
+        )}
+
+      <button onClick={handleClickDelete} className="emoji-button delete">🗑</button>
     </div>
   )
 }

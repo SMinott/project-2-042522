@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react"
 import Character from "./Character"
 
-function CharContainer({ charList }) {
+function CharContainer({ charList, deleteChar }) {
 
   const [name, setName] = useState("")
   const [searchedName, setSearchedName] = useState("")
@@ -38,7 +38,7 @@ function CharContainer({ charList }) {
   const displayList = searchList.map((item) =>
   {
     return (
-      <Character item={item} />
+      <Character item={item} deleteChar={deleteChar} />
     )
   })
 

@@ -30,7 +30,7 @@ function handleSubmit(e){
     body: JSON.stringify(newObject)
   })
     .then(resp => resp.json())
-    .then(data => newChar(data))
+    .then(data => newChar(data)) //console.log(data)
 }
 
   return (
