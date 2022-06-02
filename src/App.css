@@ -83,6 +83,24 @@ h1 {
   height: 250px;
 }
 
+.emoji-button {
+  float: left;
+  scale: 1.5;
+  margin-top: 10px;
+}
+
+.favorite {
+  margin-left: 50px;
+}
+
+.active {
+  color: #ff00f1;
+}
+
+.delete {
+  margin-left: 50px;
+}
+
 #searchInput {
   font-size: 20px;
   font-family: "futura";
