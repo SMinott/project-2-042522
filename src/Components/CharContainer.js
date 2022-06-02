@@ -4,20 +4,23 @@ import Search from "./Search"
 
 function CharContainer({ charList, deleteChar, addToFavs }) {
 
-    const [searchedName, setSearchedName] = useState("")
+  const [searchedName, setSearchedName] = useState("")
 
-    const filterList = (item) =>
-    {
-        setSearchedName(item)
-    }
+  //sets searched name
+  const filterList = (item) =>
+  {
+      setSearchedName(item)
+  }
 
-    const searchList = charList.filter((item) =>
-    {
-      return (
-        item.name.toLowerCase().includes(searchedName.toLowerCase())
-      )
-    })
+  //filters character list to find searched input
+  const searchList = charList.filter((item) =>
+  {
+    return (
+      item.name.toLowerCase().includes(searchedName.toLowerCase())
+    )
+  })
 
+  //displays character cards
   const displayList = searchList.map((item) =>
   {
     return (
@@ -29,11 +32,9 @@ function CharContainer({ charList, deleteChar, addToFavs }) {
     <div>
       <h1>Characters</h1>
       <Search filterList={ filterList }/>
-
       <div className="cardContainer">
         {displayList}
       </div>
-
     </div>
   )
 }

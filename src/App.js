@@ -2,15 +2,10 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
 import Home from './Components/Home';
 import CharContainer from './Components/CharContainer';
-
-// import Character from './Components/Character';
 import Search from './Components/Search';
-// import Filter from './Components/Filter';
-
 import Form from './Components/Form';
 import Favorites from "./Components/Favorites";
 import {useState, useEffect} from "react";
-import { gsap } from "gsap";
 import Bus from "./Components/Bus"
 
 function App() {
@@ -26,8 +21,8 @@ function App() {
     }, 5000)
   }, [])
 
+  //fetch character list from server
   const [characterList, setCharacterList] = useState([])
-
   useEffect(() =>
   {
     fetch("http://localhost:3000/characters")
@@ -35,10 +30,12 @@ function App() {
     .then(setCharacterList)
   }, [])
 
+  //adds new character from form
   function handleAddCharacter(newChar){
     setCharacterList([newChar, ...characterList])
   }
 
+  //deletes character from delete button
   function handleDeleteCharater(id){
     const deleteCharacter = characterList.filter((item) => item.id !==id)
     setCharacterList(deleteCharacter)
@@ -73,17 +70,12 @@ function App() {
       <div class="homePage">
         <Router>
           <h1 id="title">Mean Girls Characters</h1>
-          {/* <Bus /> */}
-          {/* whatever is above this will remain the same throghout every other page */}
-          {/* Every route defined should be encompased in the <routes> element */}
-          {/* Everthing outside of <Routes> appears on every page */}
           <nav>
             <ul className="linkClass">
               <li><Link to='/'>Home</Link></li>
               <li><Link to='character'>Character</Link></li>
               <li><Link to='form'>Add Character</Link></li>
               <li><Link to='favorites'>Favorites</Link></li>
-              {/* <li><Link to='remove'>Remove Character</Link></li> */}
             </ul>
           </nav>
           <Routes>
@@ -92,7 +84,6 @@ function App() {
             <Route path='/search' element={ <Search charList={ characterList } />} />
             <Route path='/form' element={ <Form newChar={handleAddCharacter} />} />
             <Route path='/favorites' element={ <Favorites isFav={isFav} removeFav={removeFav}/>} />
-            {/* <Route path='/remove' element={ <Filter />} /> */}
           </Routes>
         </Router>
       </div>      

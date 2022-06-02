@@ -2,6 +2,7 @@ function FavChar({ item, removeFav}) {
 
   const {id, name, image, quote} = item
 
+  //removes character from favorites list
   function handleRemove()
   {
       removeFav(id)

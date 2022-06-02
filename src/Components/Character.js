@@ -4,6 +4,7 @@ function Character({ item, deleteChar, addToFavs }) {
   const [seefavorite, setSeeFavorite] = useState(false)
   const {id, name, image, quote} = item
 
+  //adds character to favorite list
   function handleClickFav()
   {
     setSeeFavorite(seefavorite => !seefavorite)
@@ -13,6 +14,7 @@ function Character({ item, deleteChar, addToFavs }) {
     }
   }
 
+  //deletes character
   function handleClickDelete()
   {
     fetch(`http://localhost:3000/characters/${id}`, {

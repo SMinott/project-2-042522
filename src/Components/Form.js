@@ -7,21 +7,22 @@ const [formData, setFormData] = useState({
   quote: '',
 })
 
+//sets inputs into formData
 function handleChange(e){
   setFormData({
     ...formData, [e.target.name]: e.target.value
   })
 }
 
+//sends input data to server
 function handleSubmit(e){
   e.preventDefault()
-  // console.log('hi')
   const newObject = {
     name: formData.name,
     image: formData.image,
     quote: formData.quote
   }
-  // console.log(newObject)
+  
   fetch("http://localhost:3000/characters", {
     method: 'POST',
     headers: {
