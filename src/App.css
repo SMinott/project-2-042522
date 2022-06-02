@@ -5,13 +5,17 @@ body {
   text-align: center;
 }
 
+#homeTitle {
+  margin-top: 30px;
+}
+
 .homeContainer {
   background-color: #FFCCFB;
   width: 650px;
   padding: 30px;
   border-radius: 25px;
   margin-left: 370px;
-  margin-top: 40px;
+  margin-top: 25px;
 }
 
 #title {
