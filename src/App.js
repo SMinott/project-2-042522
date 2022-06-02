@@ -9,8 +9,21 @@ import Search from './Components/Search';
 
 import Form from './Components/Form';
 import {useState, useEffect} from "react";
+import { gsap } from "gsap";
+import Bus from "./Components/Bus"
 
 function App() {
+
+  //loading screen
+  const [loading, setLoading] = useState(false);
+  useEffect(() =>
+  {
+    setLoading(true)
+    setTimeout(() =>
+    {
+      setLoading(false)
+    }, 8000)
+  }, [])
 
   const [characterList, setCharacterList] = useState([])
 
@@ -31,28 +44,36 @@ function App() {
   }
 
   return (
-    <Router>
-      <h1 id="title">Mean Girls Characters</h1>
-      {/* whatever is above this will remain the same throghout every other page */}
-      {/* Every route defined should be encompased in the <routes> element */}
-      {/* Everthing outside of <Routes> appears on every page */}
-      <nav>
-        <ul className="linkClass">
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='character'>Character</Link></li>
-          <li><Link to='form'>Add Character</Link></li>
-          {/* <li><Link to='remove'>Remove Character</Link></li> */}
-        </ul>
-      </nav>
-      <Routes>
-        <Route path='/' element={ <Home />} />
-        <Route path='/character' element={ <CharContainer charList={ characterList } deleteChar={handleDeleteCharater}/>} />
-        <Route path='/search' element={ <Search charList={ characterList } />} />
-        <Route path='/form' element={ <Form newChar={handleAddCharacter} />} />
-        {/* <Route path='/remove' element={ <Filter />} /> */}
-
-      </Routes>
-    </Router>
+    <div class="App">
+      {loading ? 
+        <Bus />
+      :
+      <div class="homePage">
+        <Router>
+          <h1 id="title">Mean Girls Characters</h1>
+          {/* <Bus /> */}
+          {/* whatever is above this will remain the same throghout every other page */}
+          {/* Every route defined should be encompased in the <routes> element */}
+          {/* Everthing outside of <Routes> appears on every page */}
+          <nav>
+            <ul className="linkClass">
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='character'>Character</Link></li>
+              <li><Link to='form'>Add Character</Link></li>
+              {/* <li><Link to='remove'>Remove Character</Link></li> */}
+            </ul>
+          </nav>
+          <Routes>
+            <Route path='/' element={ <Home />} />
+            <Route path='/character' element={ <CharContainer charList={ characterList } deleteChar={handleDeleteCharater}/>} />
+            <Route path='/search' element={ <Search charList={ characterList } />} />
+            <Route path='/form' element={ <Form newChar={handleAddCharacter} />} />
+            {/* <Route path='/remove' element={ <Filter />} /> */}
+          </Routes>
+        </Router>
+      </div>      
+      }
+    </div>
   );
 }
 
