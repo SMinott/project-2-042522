@@ -1,11 +1,16 @@
 import React, {useState} from 'react'
 
-function Character({ item, deleteChar}) {
+function Character({ item, deleteChar, addToFavs }) {
   const [seefavorite, setSeeFavorite] = useState(false)
   const {id, name, image, quote} = item
 
-  function handleClickFav(){
+  function handleClickFav()
+  {
     setSeeFavorite(seefavorite => !seefavorite)
+    if (seefavorite === false)
+    {
+      addToFavs(item)
+    }
   }
 
   function handleClickDelete()

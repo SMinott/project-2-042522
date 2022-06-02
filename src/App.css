@@ -153,3 +153,8 @@ h1 {
 #loadingText {
   margin-top: 100px;
 }
+
+#removeButton {
+  font-size: 18px;
+  padding: 5px;
+}

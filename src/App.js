@@ -8,6 +8,7 @@ import Search from './Components/Search';
 // import Filter from './Components/Filter';
 
 import Form from './Components/Form';
+import Favorites from "./Components/Favorites";
 import {useState, useEffect} from "react";
 import { gsap } from "gsap";
 import Bus from "./Components/Bus"
@@ -22,7 +23,7 @@ function App() {
     setTimeout(() =>
     {
       setLoading(false)
-    }, 8000)
+    }, 1000)
   }, [])
 
   const [characterList, setCharacterList] = useState([])
@@ -43,6 +44,27 @@ function App() {
     setCharacterList(deleteCharacter)
   }
 
+  //adds favorited character to favorites list
+  const [isFav, setIsFav] = useState([])
+  const addToFavs = (item) =>
+  {
+    setIsFav([...isFav, item])
+  }
+
+  //removes from favorites list
+  const [removedId, setRemovedId] = useState("")
+  const removeFav = (id) =>
+  {
+    // setRemovedId(item)
+    const remFavList = isFav.filter((item) =>
+    {
+      return (
+        item.id !== id
+      )
+    })
+    setIsFav(remFavList)
+  }
+
   return (
     <div class="App">
       {loading ? 
@@ -60,14 +82,16 @@ function App() {
               <li><Link to='/'>Home</Link></li>
               <li><Link to='character'>Character</Link></li>
               <li><Link to='form'>Add Character</Link></li>
+              <li><Link to='favorites'>Favorites</Link></li>
               {/* <li><Link to='remove'>Remove Character</Link></li> */}
             </ul>
           </nav>
           <Routes>
             <Route path='/' element={ <Home />} />
-            <Route path='/character' element={ <CharContainer charList={ characterList } deleteChar={handleDeleteCharater}/>} />
+            <Route path='/character' element={ <CharContainer charList={ characterList } deleteChar={handleDeleteCharater} addToFavs={addToFavs} />} />
             <Route path='/search' element={ <Search charList={ characterList } />} />
             <Route path='/form' element={ <Form newChar={handleAddCharacter} />} />
+            <Route path='/favorites' element={ <Favorites isFav={isFav} removeFav={removeFav}/>} />
             {/* <Route path='/remove' element={ <Filter />} /> */}
           </Routes>
         </Router>
