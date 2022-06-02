@@ -23,7 +23,7 @@ function App() {
     setTimeout(() =>
     {
       setLoading(false)
-    }, 1000)
+    }, 5000)
   }, [])
 
   const [characterList, setCharacterList] = useState([])

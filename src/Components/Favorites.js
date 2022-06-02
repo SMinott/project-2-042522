@@ -10,7 +10,7 @@ function Favorites({ isFav, removeFav }) {
   })
 
   return (
-    <div>
+    <div className="cardContainer">
       {displayList}
     </div>
   )
