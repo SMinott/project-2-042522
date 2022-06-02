@@ -12,7 +12,7 @@ function Bus()
         yoyo: true, 
         repeat: -1, 
         ease: "power1.inOut",
-        delay: 1,
+        delay: 0,
         stagger: 
         {
           amount: 1.5, 
